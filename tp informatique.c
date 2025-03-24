@@ -6,40 +6,34 @@ typedef struct Noeud {
     struct Noeud *suivant;
 } Noeud;
 
-Noeud *cree(int _value) {
-    Noeud *NV = (Noeud *)malloc(sizeof(Noeud));
+Noeud *cree(int _value)
+{ Noeud *NV = (Noeud *)malloc(sizeof(Noeud));
     NV->valeur = _value;
     NV->suivant = NULL;
-    return NV;
-}
+    return NV;}
 
-void affiche(Noeud *debut) {
-    Noeud *courant = debut;
-    while (courant != NULL) {
-        printf("la valeur est %d\n", courant->valeur);
-        courant = courant->suivant;
-    }
-}
+void affiche(Noeud *debut) 
+   {Noeud *courant = debut;
+    while (courant != NULL) 
+    { printf("la valeur est %d\n", courant->valeur);
+    courant = courant->suivant;}}
 
-Noeud *ajouterD(Noeud *debut, int _value) {
-    Noeud *NV = (Noeud *)malloc(sizeof(Noeud));
-    NV->valeur = _value;
-    NV->suivant = debut;
-    return NV;
-}
+Noeud *ajouterD(Noeud *debut, int _value)
+  {Noeud *NV = (Noeud *)malloc(sizeof(Noeud));
+   NV->valeur = _value;
+   NV->suivant = debut;
+   return NV;}
 
-Noeud *ajouterF(Noeud *debut, int _value) {
-    Noeud *NV = (Noeud *)malloc(sizeof(Noeud));
+Noeud *ajouterF(Noeud *debut, int _value) 
+   { Noeud *NV = (Noeud *)malloc(sizeof(Noeud));
     NV->valeur = _value;
     NV->suivant = NULL;
     if (debut == NULL) return NV;
     Noeud *courant = debut;
-    while (courant->suivant != NULL) {
-        courant = courant->suivant;
-    }
+    while (courant->suivant != NULL) 
+    {courant = courant->suivant; }
     courant->suivant = NV;
-    return debut;
-}
+    return debut;}
 
 void rechercher(Noeud *debut, int _value) {
     Noeud *courant = debut;
